@@ -1,0 +1,51 @@
+{
+    // Breakpoint
+    "Single Media Query": {
+        "prefix": "q",
+        "body": ["@media (max-width: \\$breakpoint$1){$2}"]
+    },
+    // Breakpoint
+    "All Media Queries": {
+        "prefix": "qa",
+        "body": [
+            "@media (max-width: \\$breakpoint1450){${1}}",
+            "@media (max-width: \\$breakpoint992){${1}}",
+            "@media (max-width: \\$breakpoint768){${1}}",
+            "@media (max-width: \\$breakpoint480){${1}}"
+        ]
+    },
+    // After
+    "After Pseudo element": {
+        "prefix": "af",
+        "body": [
+            "position: relative;",
+            "&:after {",
+            "	position: absolute;",
+            "	content: \"\";",
+            "   ${1}",
+            "}"
+        ]
+    },
+    "Before Pseudo element": {
+        "prefix": "be",
+        "body": [
+            "position: relative;",
+            "&:before {",
+            "	position: absolute;",
+            "	content: \"\";",
+            "	${1}",
+            "}"
+        ]
+    },
+    // Section
+    "Section snippet": {
+        "prefix": "s",
+        "body": [
+            "<section class=\"section__${1}\">",
+            "    <div class=\"container\">",
+            "        ${2}",
+            "    </div>",
+            "</section>"
+        ]
+    }
+}

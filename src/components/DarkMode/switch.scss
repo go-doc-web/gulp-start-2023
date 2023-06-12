@@ -1,0 +1,42 @@
+.switch {
+    width: 70px;
+    height: 30px;
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    // .switch__checkbox
+    &__checkbox {
+        display: none;
+
+        &:checked + .switch__slider {
+            background: darkcyan;
+            &:after {
+                left: 45px;
+                display: flex;
+                background: whitesmoke;
+            }
+        }
+    }
+    // .switch__slider {
+    &__slider {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background: #43adff;
+        border-radius: 30px;
+        transition: 0.5s background;
+        &::after {
+            position: absolute;
+            content: '';
+            width: 20px;
+            height: 20px;
+            border-radius: 100%;
+            background: white;
+            transition: 0.5s left, background;
+            left: 5px;
+            top: 5px;
+        }
+    }
+}

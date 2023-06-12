@@ -1,0 +1,114 @@
+.select {
+    width: 100%;
+    position: relative;
+    z-index: 10;
+
+    &__backdrop {
+        position: fixed;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        background: transparent;
+        z-index: -1;
+        display: none;
+    }
+
+    &.open {
+        .select__dropdown {
+            display: block;
+            z-index: 5;
+        }
+
+        // .select__input {
+        //     border-bottom: none;
+        // }
+
+        .select__backdrop {
+            display: block;
+        }
+    }
+
+    // Select input styles
+    &__input {
+        border: 1px solid #252241;
+        display: flex;
+        align-items: center;
+        padding: 10px;
+        cursor: pointer;
+        display: flex;
+        font-style: normal;
+        font-size: 16px;
+        width: 100%;
+        color: #252241;
+
+        // Select image styles
+        .select__img {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+        }
+
+        // Select arrow styles
+        .select__arrow {
+            pointer-events: none;
+            margin-left: auto;
+            width: 10px;
+            transition: 0.3s transform;
+            &.open {
+                transform: rotate(-180deg);
+            }
+        }
+
+        span {
+            pointer-events: none;
+        }
+    }
+
+    // Select dropdown styles
+    &__dropdown {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #ffffff;
+        z-index: 5;
+        box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.14);
+        border-bottom: 1px solid #252241;
+        border-right: 1px solid #252241;
+        border-left: 1px solid #252241;
+
+        .select__list {
+            .select__item {
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                padding: 10px;
+                font-style: normal;
+                font-size: 16px;
+                color: #000000;
+
+                .select__img {
+                    border-radius: 50%;
+                    margin-right: 10px;
+                    width: 20px;
+                    height: 20px;
+                }
+
+                // Selected item styles
+                &.selected {
+                    background-color: blue;
+                    color: white;
+                }
+
+                // Select item hover state
+                &:hover {
+                    background-color: blue;
+                    color: white;
+                    transition: 0.15 background-color ease-in;
+                }
+            }
+        }
+    }
+}
